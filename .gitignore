@@ -1,0 +1,40 @@
+# ===== Python =====
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+.env
+venv/
+env/
+*.egg-info/
+
+# ===== Java / Maven =====
+backend/target/
+backend/.mvn/wrapper/maven-wrapper.jar
+*.class
+*.jar
+*.war
+
+# ===== IDE =====
+.idea/
+.vscode/
+*.iml
+*.iws
+*.ipr
+.DS_Store
+
+# ===== Jupyter =====
+.ipynb_checkpoints/
+
+# ===== Logs =====
+*.log
+logs/
+
+# ===== Temp files =====
+*.tmp
+token.tmp
+admintoken.tmp
+
+# ===== Secrets =====
+backend/src/main/resources/application.properties
