@@ -26,9 +26,13 @@ public class TestController {
             @AuthenticationPrincipal String email,
             @Valid @RequestBody TestSubmitRequest req) {
 
-        String userId = userRepository.findByEmail(email)
-                .orElseThrow(() -> new RuntimeException("User not found"))
-                .getId();
+        // userId is null when submitted anonymously (no JWT)
+        String userId = null;
+        if (email != null) {
+            userId = userRepository.findByEmail(email)
+                    .map(u -> u.getId())
+                    .orElse(null);
+        }
 
         TestSession session = testService.submitTest(userId, req);
         return ResponseEntity.ok(session);

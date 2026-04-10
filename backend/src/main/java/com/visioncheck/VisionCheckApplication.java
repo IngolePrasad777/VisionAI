@@ -7,5 +7,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class VisionCheckApplication {
     public static void main(String[] args) {
         SpringApplication.run(VisionCheckApplication.class, args);
+        System.out.println("Running !!!! ");
     }
 }
